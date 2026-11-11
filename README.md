@@ -1,8 +1,17 @@
-# hotel-booking-playwright-tests
+# hotel-planisphere-playwright-tests-v2
 
-[![Playwright Tests](https://github.com/cazmura/hotel-booking-playwright-tests/actions/workflows/playwright.yml/badge.svg)](https://github.com/cazmura/hotel-booking-playwright-tests/actions/workflows/playwright.yml)
+[![Playwright Tests](https://github.com/cazmura/hotel-planisphere-playwright-tests-v2/actions/workflows/playwright.yml/badge.svg)](https://github.com/cazmura/hotel-planisphere-playwright-tests-v2/actions/workflows/playwright.yml)
 
 [HOTEL PLANISPHERE](https://hotel-example-site.takeyaqa.dev/ja/index.html) を対象にした手動テストケースと、その自動化（Playwright + Page Object Model）のサンプルです。
+
+このリポジトリは [hotel-planisphere-playwright-tests](https://github.com/cazmura/hotel-planisphere-playwright-tests)（ベースライン実装）での学びを踏まえ、デザインパターンとCIパイプラインを改善したバージョンです。主な変更点:
+
+- Page Object Model（`pages/LoginPage.ts`, `MyPage.ts`, `PlansPage.ts`）を導入し、セレクタをテストコードから分離
+- テストファイルを機能単位（`login.spec.ts`, `plans.spec.ts`）に分割
+- ESLint・TypeScriptの型チェックをCIに追加
+- Chromium / Firefox / WebKit のマルチブラウザ実行
+- 依存パッケージ・Playwrightブラウザのキャッシュによる実行時間の短縮
+- READMEへのCIステータスバッジ追加
 
 ## 対象サイト
 
