@@ -1,9 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 import { MyPage } from '../pages/MyPage';
-
-const VALID_EMAIL = 'ichiro@example.com';
-const VALID_PASSWORD = 'password';
+import { users } from '../fixtures/users';
 
 test.describe('ログイン', () => {
   // TC1: 正しい認証情報でログインできる
@@ -13,12 +11,12 @@ test.describe('ログイン', () => {
 
     await test.step('正しい認証情報でログインする', async () => {
       await loginPage.goto();
-      await loginPage.login(VALID_EMAIL, VALID_PASSWORD);
+      await loginPage.login(users.premium.email, users.premium.password);
     });
 
     await test.step('マイページに会員情報が表示されることを確認する', async () => {
       await expect(page).toHaveURL(/mypage\.html/);
-      await expect(myPage.emailValue(VALID_EMAIL)).toBeVisible();
+      await expect(myPage.emailValue(users.premium.email)).toBeVisible();
       await expect(myPage.nameValue).toBeVisible();
     });
   });
@@ -29,7 +27,7 @@ test.describe('ログイン', () => {
 
     await test.step('誤った認証情報でログインする', async () => {
       await loginPage.goto();
-      await loginPage.login('wrong@example.com', 'wrongpass');
+      await loginPage.login(users.invalid.email, users.invalid.password);
     });
 
     await test.step('エラーメッセージが表示されることを確認する', async () => {

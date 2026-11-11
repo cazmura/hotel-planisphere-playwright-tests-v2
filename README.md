@@ -53,6 +53,8 @@ pages/           画面ごとのPage Object（セレクタと操作をまとめ�
   LoginPage.ts
   MyPage.ts
   PlansPage.ts
+fixtures/        テストデータ（アカウント情報など）をテストコードから分離
+  users.ts
 tests/           テストケース（画面/機能単位でファイルを分割）
   login.spec.ts    TC1, TC2
   plans.spec.ts    TC3
