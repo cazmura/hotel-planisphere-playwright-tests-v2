@@ -1,0 +1,24 @@
+{
+  "name": "hotel-booking-playwright-tests",
+  "version": "1.0.0",
+  "description": "Playwright E2E tests for the HOTEL PLANISPHERE practice site, using the Page Object Model pattern",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:report": "playwright show-report",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.65.0",
+    "@types/node": "^26.6.6",
+    "eslint": "^10.14.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.2"
+  }
+}
